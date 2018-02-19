@@ -1,0 +1,31 @@
+\documentclass{article}
+
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{pgfplotstable}
+\usepackage[russian]{babel}
+\usepackage[utf8]{inputenc}
+
+\newgeometry{scale = 0.8}
+\selectlanguage{russian}
+
+\begin{document}
+
+\begin{table}
+\begin{center}
+	\caption{}
+    \pgfplotstabletypeset[
+    		multicolumn names,
+    		col sep = comma,
+    		columns/LT_um/.style={column name = $l_T\ \mu$м},
+    		columns/IT_uA/.style={column name = $l_T\ \mu$А},
+    		columns/LR_um/.style={column name = $l_R\ \mu$м},
+    		columns/IR_uA/.style={column name = $l_R\ \mu$А},
+    		every head row/.style={before row=\toprule, after row=\midrule},
+    		every nth row={1}{after row=\midrule},
+    		every last row/.style={after row=\bottomrule},
+    		]{table3.csv}
+\end{center}
+\end{table}
+
+\end{document}
